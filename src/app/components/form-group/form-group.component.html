@@ -1,0 +1,20 @@
+<h2>FormGroup, FormBuilder</h2>
+
+<div [formGroup]="myForm">
+  <fieldset>
+    <legend>First Name</legend>
+    <input type="text" formControlName="firstName" />
+  </fieldset>
+  <fieldset>
+    <legend>Last Name</legend>
+    <input type="text" formControlName="lastName" />
+  </fieldset>
+</div>
+<fieldset>
+  <legend>Debug Info</legend>
+  <pre>values: {{ myForm.value | json }}</pre>
+  <pre>errors: {{ myForm.errors | json }}</pre>
+  <pre>firstName errors: {{ myForm.controls.firstName.errors | json }}</pre>
+  <pre>lastName errors: {{ myForm.controls.lastName.errors | json }}</pre>
+  <pre>invalid: {{ myForm.invalid | json }}</pre>
+</fieldset>

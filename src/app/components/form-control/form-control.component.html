@@ -1,0 +1,34 @@
+<h2>Raw FormControl</h2>
+
+<fieldset>
+  <fieldset>
+    <legend>First name</legend>
+    <input type="text" [formControl]="firstName" />
+    <div *ngIf="firstName?.errors?.reqired">First name is required.</div>
+    <div *ngIf="firstName?.errors?.minlength">
+      First name must be at least 2 characters long.
+    </div>
+    <div *ngIf="firstName?.errors?.maxlength">
+      First name can be no longer than 10 characters.
+    </div>
+
+    <br />
+
+    <pre>value: {{ firstName.value | json }}</pre>
+    <pre>errors: {{ firstName.errors | json }}</pre>
+  </fieldset>
+
+  <br />
+  <br />
+
+  <fieldset>
+    <legend>Last name</legend>
+    <input type="text" [formControl]="lastName" />
+    <div *ngIf="lastName?.errors?.required">Last name is required.</div>
+
+    <br />
+
+    <pre>value: {{ lastName.value | json }}</pre>
+    <pre>errors: {{ lastName.errors | json }}</pre>
+  </fieldset>
+</fieldset>
